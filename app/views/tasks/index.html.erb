@@ -1,0 +1,12 @@
+<h1><strong>My Tasks</strong></h1>
+
+<ul class="list-unstyled">
+  <% @tasks.each do |task|  %>
+    <li class="d-flex align-items-center">
+      <%= check_box_tag "task_#{task.id}", task.id %>
+      <%= link_to task.title, task_path(task) %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to 'Add New Task', new_task_path, class: 'btn btn-success mb-3' %>
